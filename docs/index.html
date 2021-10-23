@@ -36,7 +36,7 @@
             limpiar()
             let contenido = document.querySelector('#datos')
             contenido.innerHTML=`<tr> <th>id</th> <th>Nombre</th> <th>email</th> </tr>`
-            fetch('http://localhost:3000/estudiantes')
+            fetch('https://finalapiv12.herokuapp.com/estudiantes/')
                 .then(res => res.json())
                 .then(datos=>{
                     console.log(datos)
@@ -71,7 +71,7 @@
         function guardar(value){
             (async () => {
 
-                const rawResponse = await fetch('http://localhost:3000/estudiantes', {
+                const rawResponse = await fetch('https://finalapiv12.herokuapp.com/estudiantes', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -90,7 +90,7 @@
         }
         function borrar(id){
             (async () => {
-                const url = "http://localhost:3000/estudiantes/"+id
+                const url = "https://finalapiv12.herokuapp.com/estudiantes"+id
                 //console.log(url)
                 const rawResponse = await fetch(url, {
                 method: 'DELETE'
